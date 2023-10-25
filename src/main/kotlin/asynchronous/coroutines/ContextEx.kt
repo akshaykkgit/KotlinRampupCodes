@@ -23,8 +23,10 @@ fun main() {
 
 /*
 
-Coroutine context is a fundamental concept in Kotlin's coroutine framework, used to manage the execution
-context or environment in which coroutines run. It provides crucial information such as the dispatcher
+Coroutine context is a fundamental concept in Kotlin's coroutine framework,
+ used to manage the execution
+context or environment in which coroutines run.
+It provides crucial information such as the dispatcher
  (thread or thread pool) on which a coroutine should execute and other context elements.
 
 We define a coroutine context (context) using Dispatchers.Default, which indicates that the

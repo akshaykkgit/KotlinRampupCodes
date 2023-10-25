@@ -9,7 +9,7 @@ class Person {
 
 //With COnstructor
 
-class Person2 constructor(name: String, lName: String) {
+internal  class Person2 constructor(name: String, lName: String) {
 
     constructor(name: String, lName: String,mname:String):this(name, lName){
 

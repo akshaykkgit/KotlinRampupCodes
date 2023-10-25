@@ -6,6 +6,10 @@ fun foo() {
    //     return // won't compile
     }
 }
+val fun1 = {
+    println("Hello")
+    //     return // won't compile
+}
 
 /*
 Here, the Kotlin compiler won’t allow us to exit from the
