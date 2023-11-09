@@ -52,5 +52,6 @@ enum class Planet(val mass: Double, val radius: Double) {
 
     VENUS(4.867e24, 6051.8)
 
+
 }
 

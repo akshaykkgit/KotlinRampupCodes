@@ -13,7 +13,7 @@ fun main() {
             val st=System.currentTimeMillis()
             val result = coroutineScope {
                 val job1= launch {
-                    println("corutine 1 is running")
+                    println("coroutine 1 is running")
                     println("Started Thead ${Thread.currentThread().name}")
                     delay(4000)
                     println("coroutine 1 is done")
@@ -33,6 +33,7 @@ fun main() {
             val tot=en-st
             println("Tot=$tot")
             println(result)
+
 
         }
         catch (e:Exception){

@@ -3,16 +3,18 @@ package asynchronous.coroutines
 import kotlinx.coroutines.*
 
 
-fun main(): Unit = runBlocking {
+fun main()= runBlocking {
     //Here UpdateUI will execute first
     //this is just demo for Coroutine can work non-sequential as well
     // This Example using Context that will run task in diffrent thread
     //Here we need to complete refreshTask() and refreshReservation() before updateUI()
     //This will lauch below 2 task in worker thread
+    println("Running on 1 ${Thread.currentThread().name}")
     val task1= async { refreshTask() } // create a new coroutine
-    val task2=async { refreshReservation() }// create new coroutine
+    val task2= async { refreshReservation() }// create new coroutine
     awaitAll(task1,task2) // waiti till both the task are finsihed. both task run serially
-    withContext(this@runBlocking.coroutineContext) { //This will call back to the delegation.main Thread
+    withContext(this@runBlocking.coroutineContext) {
+        println("Before updateUI ${Thread.currentThread().name}")//This will call back to the delegation.main Thread
         updateUI()
     }
     val job=launch { refreshUser() }
@@ -21,8 +23,11 @@ fun main(): Unit = runBlocking {
 
 
     val job2 = CoroutineScope(Dispatchers.Default).launch {
-
+        println("Running on DISPatcher ${Thread.currentThread().name}")
         // Coroutine code here
+        withContext(this@runBlocking.coroutineContext) {
+            println("WithContext exe Thread: ${Thread.currentThread().name}")
+        }
 
     }
 
@@ -32,12 +37,12 @@ fun main(): Unit = runBlocking {
 }
 
 private suspend fun refreshTask() {
-    delay(2000)
+    delay(3000)
     println("Resfresh Task on ${Thread.currentThread().name}")
 }
 
 private suspend fun refreshReservation() {
-    delay(2000)
+    delay(3000)
     println("Resfreshing Reservation on ${Thread.currentThread().name}")
 }
 

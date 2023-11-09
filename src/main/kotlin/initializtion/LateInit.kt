@@ -21,20 +21,30 @@ data class DestrEx(val name:String,val age:Int,val addr:String){
 }
 
 fun main() {
+
+    val a=1
+    val b=1
+    if (a===b){
+        println("Success")
+    }
     val fc=FastClass()
     fc.slowObject
 
     val data=DestrEx("a",1,"addr1")
     val arr= arrayOf(1,2)
+
     //Convienient way of extracting data from object
+    //destructure
     val (name, age) = data
     val (n1,n2) = arr
     println("$name - $age")
     println("$n1 - $n2")
 
 
+
     //used to declare non null property when that is not immediately initialized
     lateinit var test: String
+
 
 
 

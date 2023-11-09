@@ -10,10 +10,12 @@ fun main() {
 
 
 }
-inline fun teach(){
+
+inline fun teach() {
     println("teaching inlin")
 
 }
+
 inline fun doOperations(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
 
     return operation(a, b)

@@ -1,9 +1,9 @@
 package functions
 
 fun main() {
-   // performApplyOperation()
-    //performLetOperation()
-  // performAlsoOperation()
+//    performApplyOperation()
+  //  performLetOperation()
+//    performAlsoOperation()
 //    val numbers = mutableListOf("One", "Two", "Three", "Four", "Five")
 //    numbers.map { it.length }.filter { it > 3 }.let {
 //        print(it)
@@ -11,8 +11,8 @@ fun main() {
 //    val person = Personss().let {
 //        return@let "\nThe name of the Person is: ${it.name}"
 //    }
-    //performWithOperation()
-   performRunOperation()
+    performWithOperation()
+//   performRunOperation()
 
 }
 private fun performLetOperation() {
@@ -24,6 +24,7 @@ private fun performLetOperation() {
         personDetails
 
     }
+
     println(person2.displayInfo())
 }
 /*    “ let ” can also be used when we want to perform an operation
@@ -47,11 +48,11 @@ private fun performWithOperation() {
         name = "asdf"
         contactNumber = "1234"
         address = "wasd"
-        displayInfo()
-        this
+        //displayInfo()
+        "this"
     }
-
-    println(a.displayInfo())
+print(a)
+   // println(a.displayInfo())
 
 }
 private fun performAlsoOperation() {
@@ -70,7 +71,8 @@ private fun performRunOperation() {
         contactNumber = "1234"
         address = "wasd"
         displayInfo()
-        //"this"
+        this
+
 
     }
     println(b)
@@ -81,8 +83,6 @@ private fun performApplyOperation() {
         this?.name = "asdf"
         this?.contactNumber = "1234"
         this?.address = "wasd"
-"dd"
-
     }
     println(b.displayInfo())
 }

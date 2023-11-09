@@ -13,8 +13,12 @@ fun processResult(result: Result) {
         is Result.Error1 -> println("Error: ${result.message}")
     }
 }
+fun processRes(r:Result)= when(r){
+    is Result.Success1 -> println("Success2: ${r.data}")
+    is Result.Error1 -> println("Error: ${r.message}")
+}
 fun main() {
-
-
+    processResult(Result.Error1("ERR"))
+    processRes(Result.Success1("SS"))
 }
 

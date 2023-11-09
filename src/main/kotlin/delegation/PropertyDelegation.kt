@@ -37,7 +37,11 @@ fun main() {
         println("Computed!")
        "Hello, Lazy!"
     }
+    var c=0
+    c=1
+
 
 // Accessing lazyValue will initialize it on the first access
-    println(lazyValue)
+
+   println(lazyValue)
 }

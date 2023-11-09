@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 fun main() {
     // Define a coroutine context using Dispatchers
-    println("Running on 1${Thread.currentThread().name}")
+    println("Running on 1 ${Thread.currentThread().name}")
     val context = Dispatchers.IO
     // Launch a coroutine within the defined context
     val job = GlobalScope.launch(context) {

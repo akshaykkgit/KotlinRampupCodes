@@ -6,7 +6,6 @@ import kotlinx.coroutines.runBlocking
 fun main(args: Array<String>) {
 
     println("Main Thread:s1 ${Thread.currentThread().name}")
-
     runBlocking {
         println("Before calling the fetchDataFromServer()")
         val result= fetchDataFromServer()

@@ -8,7 +8,7 @@ fun foo() {
 }
 val fun1 = {
     println("Hello")
-    //     return // won't compile
+    //    return // won't compile
 }
 
 /*
@@ -17,7 +17,7 @@ enclosing function using a return inside the lambda.
 Such returns are called non-local returns.*/
 
 inline fun foo2(f: () -> Unit) {
-   // bar { f() } //wont compile
+    //bar { f() } //wont compile
 }
 
 fun bar(f: () -> Unit) {
@@ -29,7 +29,8 @@ Here, we’re passing the f lambda from an inline function to
 a non-inline function. When the lambda parameter in an inline
 function is passed to another non-inline function
 context like this, we can’t use non-local returns.
-So,the above code won’t even compile in Kotlin*/
+So,the above code won’t even compile in Kotlin
+*/
 
 inline fun foo3(crossinline f: () -> Unit) {
     bar3 { f()

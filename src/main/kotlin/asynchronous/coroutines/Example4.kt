@@ -5,7 +5,8 @@ import kotlinx.coroutines.*
 
 
 fun main() = runBlocking {
-    val parentJob = Job() // Create a parent Job
+    //
+    val parentJob = Job() // Create a parent Job and for handling child coroutines
     val parentCoroutine = CoroutineScope(Dispatchers.Default + parentJob).launch {
         println("Parent Coroutine: Started")
         val childCoroutine1 = launch {
@@ -29,5 +30,6 @@ fun main() = runBlocking {
 
     }
     parentCoroutine.join() // Wait for the parent coroutine to complete
+
 
 }

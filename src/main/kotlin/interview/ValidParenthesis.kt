@@ -1,8 +1,10 @@
 package interview
 
+import classes.Car
 import java.util.Stack
 
 fun main() {
+
     val str="{[()()]}"
     if(isValidParenthesis(str)){
         println("Valid Parenthesis")
@@ -11,6 +13,9 @@ fun main() {
         println("Not Valid")
     }
 
+}
+fun Car.getValue(){
+    this.wheels
 }
 fun isValidParenthesis(s:String):Boolean{
     val stack=Stack<Char>()
